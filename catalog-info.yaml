@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: m3i8pasmp-java-springboot-gitops
+  description: This is GitOps manifest for m3i8pasmp-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=m3i8pasmp-java-springboot
+    backstage.io/kubernetes-id: m3i8pasmp-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: m3i8pasmp-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:m3i8pasmp-java-springboot
